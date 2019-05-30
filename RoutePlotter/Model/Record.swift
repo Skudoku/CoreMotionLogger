@@ -12,10 +12,10 @@ struct Record: Codable {
     
     public let timestamp: String
     public let numberOfSteps: Int?
-    public let distance: Int?
-    public let currentPace: Int?
-    public let currentCadence: Int?
-    public let averageActivePace: Int?
+    public let distance: Float?
+    public let currentPace: Float?
+    public let currentCadence: Float?
+    public let averageActivePace: Float?
     public let acceleration: Acceleration
     public let userAcceleration: Acceleration
     public let attitudeQuaternion: Quaternion
@@ -23,14 +23,14 @@ struct Record: Codable {
 }
 
 struct Quaternion: Codable {
-    public let x: Int
-    public let y: Int
-    public let z: Int
-    public let w: Int
+    public let x: Float
+    public let y: Float
+    public let z: Float
+    public let w: Float
 }
 
 struct Acceleration: Codable {
-    public let x: Int
-    public let y: Int
-    public let z: Int
+    public let x: Float
+    public let y: Float
+    public let z: Float
 }
