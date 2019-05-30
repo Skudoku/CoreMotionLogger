@@ -10,7 +10,7 @@ import Foundation
 
 struct Record: Codable {
     
-    public let timestamp: Date
+    public let timestamp: String
     public let numberOfSteps: Int?
     public let distance: Int?
     public let currentPace: Int?

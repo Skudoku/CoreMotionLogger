@@ -34,6 +34,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var startLogTimestamp: Date?
     var currentRecords: [Record] = []
+    
+    
+    let dateformatter : DateFormatter = {
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        return dateformatter
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,7 +100,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func updateLog() {
         guard let accelerometerData = accelerometerData, let deviceMotionData = deviceMotionData, let heading = heading else { return }
-        currentRecords.append(Record(timestamp: Date(), numberOfSteps: pedometerData?.numberOfSteps.intValue, distance: pedometerData?.distance?.intValue, currentPace: pedometerData?.currentPace?.intValue, currentCadence: pedometerData?.currentCadence?.intValue, averageActivePace: pedometerData?.averageActivePace?.intValue, acceleration: Acceleration(x: Int(accelerometerData.acceleration.x), y: Int(accelerometerData.acceleration.y), z: Int(accelerometerData.acceleration.z)), userAcceleration: Acceleration(x: Int(deviceMotionData.userAcceleration.x), y: Int(deviceMotionData.userAcceleration.y), z: Int(deviceMotionData.userAcceleration.z)), attitudeQuaternion: Quaternion(x: Int(deviceMotionData.attitude.quaternion.x), y: Int(deviceMotionData.attitude.quaternion.y), z: Int(deviceMotionData.attitude.quaternion.z), w: Int(deviceMotionData.attitude.quaternion.w)), heading: Float(heading.rounded(.down))))
+        currentRecords.append(Record(timestamp: dateformatter.string(from: Date()), numberOfSteps: pedometerData?.numberOfSteps.intValue, distance: pedometerData?.distance?.intValue, currentPace: pedometerData?.currentPace?.intValue, currentCadence: pedometerData?.currentCadence?.intValue, averageActivePace: pedometerData?.averageActivePace?.intValue, acceleration: Acceleration(x: Int(accelerometerData.acceleration.x), y: Int(accelerometerData.acceleration.y), z: Int(accelerometerData.acceleration.z)), userAcceleration: Acceleration(x: Int(deviceMotionData.userAcceleration.x), y: Int(deviceMotionData.userAcceleration.y), z: Int(deviceMotionData.userAcceleration.z)), attitudeQuaternion: Quaternion(x: Int(deviceMotionData.attitude.quaternion.x), y: Int(deviceMotionData.attitude.quaternion.y), z: Int(deviceMotionData.attitude.quaternion.z), w: Int(deviceMotionData.attitude.quaternion.w)), heading: Float(heading.rounded(.down))))
         self.numberOfRecordsThisLogLabel.text = "\(currentRecords.count)"
     }
     
@@ -106,7 +113,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func stopLogTapped(_ sender: Any) {
         isRecordingRecords = false
         guard let start = startLogTimestamp else { return }
-        let log = RecordLog(timestamp: start, records: currentRecords)
+        let log = RecordLog(timestamp: dateformatter.string(from: start), records: currentRecords)
         currentRecords = []
         RecordHistoryRepository.shared.addLog(log)
     }

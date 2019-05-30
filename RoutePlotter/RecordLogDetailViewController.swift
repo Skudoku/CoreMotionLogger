@@ -16,10 +16,8 @@ class RecordLogDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let dateformatter = DateFormatter()
-        dateformatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         if let log = log {
-            self.title = dateformatter.string(from: log.timestamp)
+            self.title = log.timestamp
         }
         prettyPrintLog()
     }

@@ -16,9 +16,7 @@ class HistoryTableViewCell: UITableViewCell {
     
     func setup(with history: RecordLog) {
         record = history
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
-        historyStampLabel.text = "\(dateFormatter.string(from:record.timestamp)) entries: \(record.records.count)"
+        historyStampLabel.text = "\(record.timestamp) entries: \(record.records.count)"
     }
     
 }

@@ -10,7 +10,7 @@ import Foundation
 
 struct RecordLog: Codable {
     
-    public let timestamp: Date
+    public let timestamp: String
     public var records: [Record]
     
     
