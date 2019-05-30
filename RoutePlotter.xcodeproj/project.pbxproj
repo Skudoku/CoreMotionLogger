@@ -70,12 +70,12 @@
 				9104B19D229C794A00FE0CCE /* ViewController.swift */,
 				917A745922A07B6900553D8F /* HistoryViewController.swift */,
 				917A745B22A07CBA00553D8F /* HistoryTableViewCell.swift */,
+				917A745D22A07E4600553D8F /* RecordLogDetailViewController.swift */,
 				9104B19F229C794A00FE0CCE /* Main.storyboard */,
 				9104B1A2229C794B00FE0CCE /* Assets.xcassets */,
 				9104B1A4229C794B00FE0CCE /* LaunchScreen.storyboard */,
 				9104B1A7229C794B00FE0CCE /* Info.plist */,
 				917A745622A073E100553D8F /* Model */,
-				917A745D22A07E4600553D8F /* RecordLogDetailViewController.swift */,
 			);
 			path = RoutePlotter;
 			sourceTree = "<group>";

@@ -10,10 +10,35 @@ import UIKit
 
 class RecordLogDetailViewController: UIViewController {
     
+    @IBOutlet weak var logTextView: UITextView!
+    
     var log: RecordLog?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        if let log = log {
+            self.title = dateformatter.string(from: log.timestamp)
+        }
+        prettyPrintLog()
+    }
+    
+    func prettyPrintLog() {
+        guard let log = log else { return }
+        
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        
+        do {
+            let jsonData = try encoder.encode(log)
+            
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                self.logTextView.text = jsonString
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     

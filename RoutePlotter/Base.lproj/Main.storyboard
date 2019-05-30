@@ -125,15 +125,15 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ZM-QB-ljg">
-                                                    <rect key="frame" x="20" y="11" width="374" height="22"/>
+                                                    <rect key="frame" x="28" y="11" width="358" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="4ZM-QB-ljg" firstAttribute="leading" secondItem="qSf-sC-veP" secondAttribute="leadingMargin" id="M0Q-qB-kxk"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="4ZM-QB-ljg" secondAttribute="trailing" id="Tk9-7I-IDq"/>
+                                                <constraint firstItem="4ZM-QB-ljg" firstAttribute="leading" secondItem="qSf-sC-veP" secondAttribute="leadingMargin" constant="8" id="M0Q-qB-kxk"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="4ZM-QB-ljg" secondAttribute="trailing" constant="8" id="Tk9-7I-IDq"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="4ZM-QB-ljg" secondAttribute="bottom" id="Zd2-DL-JQT"/>
                                                 <constraint firstItem="4ZM-QB-ljg" firstAttribute="top" secondItem="qSf-sC-veP" secondAttribute="topMargin" id="ab0-RO-J2A"/>
                                             </constraints>
@@ -168,16 +168,33 @@
             </objects>
             <point key="canvasLocation" x="1905.7971014492755" y="243.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Record Log Detail View Controller-->
         <scene sceneID="wny-MW-Iae">
             <objects>
-                <viewController id="AJ4-J6-9Nz" sceneMemberID="viewController">
+                <viewController id="AJ4-J6-9Nz" customClass="RecordLogDetailViewController" customModule="RoutePlotter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jQC-Ev-jkh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7AE-qO-Iwu">
+                                <rect key="frame" x="8" y="96" width="398" height="709"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7AE-qO-Iwu" firstAttribute="top" secondItem="zWd-la-32u" secondAttribute="top" constant="8" id="A6Z-zy-8LX"/>
+                            <constraint firstItem="7AE-qO-Iwu" firstAttribute="leading" secondItem="zWd-la-32u" secondAttribute="leading" constant="8" id="Pev-WE-aDJ"/>
+                            <constraint firstItem="zWd-la-32u" firstAttribute="trailing" secondItem="7AE-qO-Iwu" secondAttribute="trailing" constant="8" id="dWB-sc-59d"/>
+                            <constraint firstItem="zWd-la-32u" firstAttribute="bottom" secondItem="7AE-qO-Iwu" secondAttribute="bottom" constant="8" id="x3B-l0-28Y"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zWd-la-32u"/>
                     </view>
+                    <connections>
+                        <outlet property="logTextView" destination="7AE-qO-Iwu" id="dFM-a4-x3V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="njD-Kt-bJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
