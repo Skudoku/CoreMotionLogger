@@ -42,7 +42,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4c4-il-8ml">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4c4-il-8ml">
                                 <rect key="frame" x="137" y="69" width="60" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="rFA-KR-dGi"/>
@@ -182,13 +182,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scr-ec-bo9">
+                                <rect key="frame" x="16" y="765" width="382" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5pr-47-vfO"/>
+                                </constraints>
+                                <state key="normal" title="Copy to clipboard">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="copyToClipboardTapped:" destination="AJ4-J6-9Nz" eventType="touchUpInside" id="1S3-SD-V74"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="zWd-la-32u" firstAttribute="trailing" secondItem="scr-ec-bo9" secondAttribute="trailing" constant="16" id="4Rk-As-jnR"/>
                             <constraint firstItem="7AE-qO-Iwu" firstAttribute="top" secondItem="zWd-la-32u" secondAttribute="top" constant="8" id="A6Z-zy-8LX"/>
+                            <constraint firstItem="scr-ec-bo9" firstAttribute="leading" secondItem="zWd-la-32u" secondAttribute="leading" constant="16" id="Kgt-rk-WWo"/>
                             <constraint firstItem="7AE-qO-Iwu" firstAttribute="leading" secondItem="zWd-la-32u" secondAttribute="leading" constant="8" id="Pev-WE-aDJ"/>
                             <constraint firstItem="zWd-la-32u" firstAttribute="trailing" secondItem="7AE-qO-Iwu" secondAttribute="trailing" constant="8" id="dWB-sc-59d"/>
                             <constraint firstItem="zWd-la-32u" firstAttribute="bottom" secondItem="7AE-qO-Iwu" secondAttribute="bottom" constant="8" id="x3B-l0-28Y"/>
+                            <constraint firstItem="zWd-la-32u" firstAttribute="bottom" secondItem="scr-ec-bo9" secondAttribute="bottom" constant="8" id="zMp-jd-3Rp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zWd-la-32u"/>
                     </view>

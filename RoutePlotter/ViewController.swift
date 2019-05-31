@@ -49,7 +49,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingHeading()
         
         if motionManager.isAccelerometerAvailable {
-            self.enableButtonsIfReady()
             motionManager.accelerometerUpdateInterval = 0.5
             motionManager.startAccelerometerUpdates(to: OperationQueue.main) { (data, error) in
                 if let data = data {
@@ -62,7 +61,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         if motionManager.isDeviceMotionAvailable {
-            self.enableButtonsIfReady()
             motionManager.deviceMotionUpdateInterval = 0.5
             motionManager.startDeviceMotionUpdates(to: OperationQueue.main) { (data, error) in
                 if let data = data {
@@ -80,7 +78,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         if CMPedometer.isStepCountingAvailable() {
-            self.enableButtonsIfReady()
             pedoMeter.startUpdates(from: Date()) { (data, error) in
                 if let data = data {
                     DispatchQueue.main.async {
@@ -95,7 +92,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         self.headingLabel.text = "Heading:\n\(newHeading.magneticHeading.rounded(.down))"
         self.heading = newHeading.magneticHeading
-        self.enableButtonsIfReady()
     }
     
     func updateLog() {
@@ -108,6 +104,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         isRecordingRecords = true
         currentRecords = []
         startLogTimestamp = Date()
+        self.startButton.isEnabled = false
+        self.stopButton.isEnabled = true
     }
     
     @IBAction func stopLogTapped(_ sender: Any) {
@@ -116,14 +114,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let log = RecordLog(timestamp: dateformatter.string(from: start), records: currentRecords)
         currentRecords = []
         RecordHistoryRepository.shared.addLog(log)
+        self.startButton.isEnabled = true
+        self.stopButton.isEnabled = false
+        
     }
-    
-    func enableButtonsIfReady() {
-        if CMPedometer.isStepCountingAvailable() && motionManager.isDeviceMotionAvailable && motionManager.isAccelerometerAvailable {
-            self.startButton.isEnabled = true
-            self.stopButton.isEnabled = true
-        }
-    }
-    
 }
 

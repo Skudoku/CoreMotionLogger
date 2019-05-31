@@ -39,5 +39,9 @@ class RecordLogDetailViewController: UIViewController {
         }
     }
     
+    @IBAction func copyToClipboardTapped(_ sender: Any) {
+        UIPasteboard.general.string = self.logTextView.text
+    }
+    
     
 }
