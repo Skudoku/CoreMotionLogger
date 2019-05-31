@@ -43,5 +43,14 @@ class RecordLogDetailViewController: UIViewController {
         UIPasteboard.general.string = self.logTextView.text
     }
     
+    @IBAction func goToOnlineConverterTapped(_ sender: Any) {
+        if let url = URL(string:"http://convertcsv.com/json-to-csv.htm") {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        
+    }
+    
     
 }

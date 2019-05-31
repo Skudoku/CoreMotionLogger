@@ -183,7 +183,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scr-ec-bo9">
-                                <rect key="frame" x="16" y="765" width="382" height="40"/>
+                                <rect key="frame" x="16" y="717" width="382" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="5pr-47-vfO"/>
@@ -195,16 +195,32 @@
                                     <action selector="copyToClipboardTapped:" destination="AJ4-J6-9Nz" eventType="touchUpInside" id="1S3-SD-V74"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4EB-S9-UNS">
+                                <rect key="frame" x="16" y="765" width="382" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="h24-Ci-k3o"/>
+                                </constraints>
+                                <state key="normal" title="Go to online converter">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToOnlineConverterTapped:" destination="AJ4-J6-9Nz" eventType="touchUpInside" id="doN-8g-Tj2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zWd-la-32u" firstAttribute="trailing" secondItem="scr-ec-bo9" secondAttribute="trailing" constant="16" id="4Rk-As-jnR"/>
                             <constraint firstItem="7AE-qO-Iwu" firstAttribute="top" secondItem="zWd-la-32u" secondAttribute="top" constant="8" id="A6Z-zy-8LX"/>
+                            <constraint firstItem="zWd-la-32u" firstAttribute="trailing" secondItem="4EB-S9-UNS" secondAttribute="trailing" constant="16" id="CxS-gF-R8L"/>
                             <constraint firstItem="scr-ec-bo9" firstAttribute="leading" secondItem="zWd-la-32u" secondAttribute="leading" constant="16" id="Kgt-rk-WWo"/>
                             <constraint firstItem="7AE-qO-Iwu" firstAttribute="leading" secondItem="zWd-la-32u" secondAttribute="leading" constant="8" id="Pev-WE-aDJ"/>
+                            <constraint firstItem="zWd-la-32u" firstAttribute="bottom" secondItem="4EB-S9-UNS" secondAttribute="bottom" constant="8" id="TEP-1C-PRj"/>
                             <constraint firstItem="zWd-la-32u" firstAttribute="trailing" secondItem="7AE-qO-Iwu" secondAttribute="trailing" constant="8" id="dWB-sc-59d"/>
+                            <constraint firstItem="4EB-S9-UNS" firstAttribute="top" secondItem="scr-ec-bo9" secondAttribute="bottom" constant="8" id="fRk-45-hBD"/>
+                            <constraint firstItem="4EB-S9-UNS" firstAttribute="leading" secondItem="zWd-la-32u" secondAttribute="leading" constant="16" id="wau-1R-M9I"/>
                             <constraint firstItem="zWd-la-32u" firstAttribute="bottom" secondItem="7AE-qO-Iwu" secondAttribute="bottom" constant="8" id="x3B-l0-28Y"/>
-                            <constraint firstItem="zWd-la-32u" firstAttribute="bottom" secondItem="scr-ec-bo9" secondAttribute="bottom" constant="8" id="zMp-jd-3Rp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zWd-la-32u"/>
                     </view>
