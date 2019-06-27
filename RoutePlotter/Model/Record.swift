@@ -13,12 +13,12 @@ struct Record: Codable {
     public let timestamp: String
     public let numberOfSteps: Int?
     public let distance: Float?
-    public let currentPace: Float?
-    public let currentCadence: Float?
-    public let averageActivePace: Float?
+    //public let currentPace: Float?
+    //public let currentCadence: Float?
+    //public let averageActivePace: Float?
     public let acceleration: Acceleration
     public let userAcceleration: Acceleration
-    public let attitudeQuaternion: Quaternion
+    //public let attitudeQuaternion: Quaternion
     public let heading: Float
 }
 
